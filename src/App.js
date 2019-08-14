@@ -1,26 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import ReactHLS from 'react-hls';
+
+class HLSPage extends Component {
+  render() {
+    return (
+      // <Player>
+      //   <HLSSource
+      //     isVideoChild
+      //     src="https://hjyjrvmlsk.vcdn.com.vn/hls/nwalmjv/index.m3u8"
+      //   />
+      //   {/* <source src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4" /> */}
+      // </Player>
+      <div>
+        <ReactHLS url={"http://185.246.209.109:8080/GOL_TV/index.m3u8"} constrols autoplay/>
+      </div>
+    
+    );
+  }
 }
 
-export default App;
+export default HLSPage;

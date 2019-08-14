@@ -31,3 +31,11 @@
     transform: rotate(360deg);
   }
 }
+
+
+.flowplayer {
+  background-color: #00abcd;
+}
+.flowplayer .fp-color-play {
+  fill: #eee;
+}
