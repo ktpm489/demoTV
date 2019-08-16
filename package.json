@@ -8,7 +8,7 @@
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-flow-player": "^1.2.1",
-    "react-hls": "0.0.8",
+    "react-hls": "git+https://github.com/ktpm489/react-hls-v2.git",
     "react-player": "^1.11.2",
     "react-scripts": "3.1.1",
     "video-react": "^0.14.1",
