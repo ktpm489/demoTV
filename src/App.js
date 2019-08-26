@@ -28,11 +28,12 @@ class HLSPage extends Component {
     if (data) {
       let { currentIndex, errList, currentData } = this.state
       if (currentIndex < arr.length) {
+
         errList.push(currentData)
         let newIndex = currentIndex + 1
         this.setState({
           currentIndex: newIndex,
-          currentLink: arr[newIndex].link,
+          currentLink: arr[newIndex].link ? arr[newIndex].link : '',
           currentData: arr[newIndex],
           errList: errList
         })
@@ -43,14 +44,17 @@ class HLSPage extends Component {
 
   onSuccess = (url) => {
     // console.log('url', url)
-    let { currentIndex, okList, currentData } = this.state
+    let { currentIndex, okList, currentData, currentLink } = this.state
     if (currentIndex < arr.length) {
-      okList.push(currentData)
+      if (currentLink) {
+        okList.push(currentData)
+      }
+      
       let newIndex = currentIndex + 1
       this.setState({
         currentIndex: newIndex,
         currentData: arr[newIndex],
-        currentLink: arr[newIndex].link,
+        currentLink: arr[newIndex].link ? arr[newIndex].link : '',
         okList: okList
       })
     }
@@ -69,7 +73,7 @@ class HLSPage extends Component {
       //   {/* <source src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4" /> */}
       // </Player>
       <div>
-        <ReactHLS url={'http://113.161.6.157:8081/hls-live/livepkgr/_definst_/liveevent/livestream.m3u8'} constrols autoplay onError={this.onError} onSuccess={this.onSuccess}/>
+        <ReactHLS url={currentLink} constrols autoplay onError={this.onError} onSuccess={this.onSuccess}/>
       </div>
 
     );

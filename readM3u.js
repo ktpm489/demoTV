@@ -19,7 +19,7 @@ function readData () {
     )
     reader.reset(); // Optional, If you want to parse a new file, call reset
     console.log('arraData', JSON.stringify(arrNew))
-    fs.writeFileSync('./formatFile.json', JSON.stringify(arrNew), { encoding: 'utf-8' })
+    fs.writeFileSync('./src/formatFile.json', JSON.stringify(arrNew), { encoding: 'utf-8' })
     return arrNew
 }
 
